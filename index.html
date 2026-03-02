@@ -142,6 +142,7 @@ header span{
   background:var(--bg-card);
   border-radius:20px;
   padding:25px 20px;
+  cursor:pointer;
   box-shadow:0 12px 30px rgba(56,24,12,.08);
 }
 
@@ -636,18 +637,13 @@ button{
 <!-- Destaques -->
 <section class="destaques">
   <div class="mini" onclick="scrollToSection('ovos-colher')">
-    <img src="IMG_9451.jpg">
-    <h4>Ovos de Colher</h4>
+    <img src="IMG_9451.jpg"><h4>Ovos de Colher</h4>
   </div>
-
   <div class="mini" onclick="scrollToSection('ovos-recheados')">
-    <img src="IMG_9873.jpg">
-    <h4>Ovos Recheados</h4>
+    <img src="IMG_9873.jpg"><h4>Ovos Recheados</h4>
   </div>
-
   <div class="mini" onclick="scrollToSection('kits')">
-    <img src="kit.jpg">
-    <h4>Kit desgustação</h4>
+    <img src="kit.jpg"><h4>Kit desgustação</h4>
   </div>
 </section>
 
@@ -1063,30 +1059,23 @@ function updatePrice(select){
 }
 
 function enviar(){
-  if(carrinho.length === 0){
-    alert("Carrinho vazio")
-    return
-  }
-  let msg = `🍫 *Pedido - Conde’s Doces*\n\n`
-  carrinho.forEach(item=>{
-    msg += `• ${item.nome} - R$ ${item.preco.toFixed(2).replace('.',',')}\n`
-  })
-  msg += `\n💰 *Total:* ${document.getElementById('total').innerText}`
-  msg += `\n\n👤 *Cliente:* ${nome.value}`
-  msg += `\n📦 *Tipo:* ${tipo.value}`
-  msg += `\n📅 *Data:* ${data.value}`
-  msg += `\n💳 *Pagamento:* ${pagamento.value}`
+  if(!carrinho.length)return alert('Carrinho vazio')
+  const nome=document.getElementById('nome').value
+  const tipo=document.getElementById('tipo').value
+  const data=document.getElementById('data').value
+  const pagamento=document.getElementById('pagamento').value
+  const obs=document.getElementById('obs').value
 
-  if(obs.value){
-    msg += `\n📝 *Obs:* ${obs.value}`
-  }
-  window.open(
-    "https://wa.me/553492950591?text=" + encodeURIComponent(msg),
-    "_blank"
-  )
-  localStorage.removeItem('carrinho')
-carrinho = []
-atualizarCarrinho()
+  let msg=`🍫 *Pedido Conde’s Doces*\n\n`
+  carrinho.forEach(i=>msg+=`• ${i.nome} x${i.qtd}\n`)
+  msg+=`\n💰 Total: ${document.getElementById('total').innerText}`
+  msg+=`\n👤 ${nome}\n📦 ${tipo}\n📅 ${data}\n💳 ${pagamento}`
+  if(obs)msg+=`\n📝 ${obs}`
+
+  window.open(`https://wa.me/5534984471024?text=${encodeURIComponent(msg)}`)
+  localStorage.clear()
+  carrinho=[]
+  atualizarCarrinho()
 }
 
 document.querySelectorAll('.carousel').forEach(carousel=>{
@@ -1150,6 +1139,10 @@ const carrinhoSalvo = localStorage.getItem('carrinho')
 if(carrinhoSalvo){
   carrinho = JSON.parse(carrinhoSalvo)
   atualizarCarrinho()
+}
+
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'})
 }
 
 </script>
