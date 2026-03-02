@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+reescreva este codigo, corrijindo a funcionalidade do carrinho, não consigo enviar o pedio, clico no botão e não acontece nada, e o card clicl dos destaques, que não funcionou, mas mantenha tudo que ja foi feito, gere o codigo completo e corrigido, pode tirar coisas duplicadas "<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -98,7 +98,7 @@ header span{
   background-position: center;
   background-repeat: no-repeat;
 
-  padding:45px;
+  padding:10%;
 
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -188,6 +188,11 @@ header span{
   gap:40px;
 }
 
+.produtos p{
+  color: var(--brown-soft);
+  font-size:14px;
+  margin-top:6px;
+}
 .card{
   background:var(--bg-card);
   border-radius:50px;
@@ -416,6 +421,7 @@ button:hover{
   margin:15px 0 10px;
   font-family:'Gallient';
   color:var(--brown);
+  
 }
 
 .cart input,
@@ -468,7 +474,13 @@ button:hover{
   color:var(--brown);
   font-size:14px;
 }
-
+.produtos h2{
+  grid-column:1/-1;
+  font-family:'Gallient',serif;
+  font-size:28px;
+  color:var(--bg-soft);
+   text-align:center;
+}
 .item-cart .info span{
   display:block;
   color:#777;
@@ -620,21 +632,26 @@ button{
     </div>
 </section>
 
+
+<!-- Destaques -->
 <section class="destaques">
-  <div class="mini">
+  <div class="mini" onclick="scrollToSection('ovos-colher')">
     <img src="IMG_9451.jpg">
     <h4>Ovos de Colher</h4>
   </div>
-  <div class="mini">
+
+  <div class="mini" onclick="scrollToSection('ovos-recheados')">
     <img src="IMG_9873.jpg">
     <h4>Ovos Recheados</h4>
   </div>
-  <div class="mini">
+
+  <div class="mini" onclick="scrollToSection('kits')">
     <img src="kit.jpg">
     <h4>Kit desgustação</h4>
   </div>
 </section>
 
+<!-- Produção Artesanal -->
 <section class="artesanal">
   <h2>Produção Artesanal</h2>
   <p>
@@ -643,7 +660,250 @@ button{
   </p>
 </section>
 
-<div class="produtos">
+<!-- ovos-colher -->
+<div class="produtos" id="ovos-colher">
+
+<h2>Ovos de Colher</h2>
+
+<!-- Dois amores -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="da1.jpeg" class="active">
+    <img src="da2.jpeg">
+    <img src="da3.jpeg">
+    <img src="da2.jpeg">
+
+    <button class="arrow prev">‹</button>
+    <button class="arrow next">›</button>
+  </div>
+  <h3>Ovo de Colher Dois Amores</h3>
+  <p>Brigadeiro ao leite e Brigadeiro branco</p>
+  <!-- TAMANHO -->
+  <select class="size" onchange="updatePrice(this)">
+    <option value="99.90">200g — R$xx,xx</option>
+    <option value="139.90">350g — R$ xx.xx</option>
+  </select>
+  <p class="price">R$ 99,90</p>
+  <button onclick="addItem(this, 'Ovo de Colher Dois Amores')">
+    Adicionar
+  </button>
+</div>
+
+<!-- crocante com brownie -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="da1.jpeg" class="active">
+    <img src="da2.jpeg">
+    <img src="da3.jpeg">
+    <img src="da2.jpeg">
+
+    <button class="arrow prev">‹</button>
+    <button class="arrow next">›</button>
+  </div>
+  <h3>Ovo de Colher Crocante com Brownie</h3>
+  <p>Creme crocante de ovomaltine com pedaços de brownie</p>
+  <!-- TAMANHO -->
+  <select class="size" onchange="updatePrice(this)">
+    <option value="99.90">200g — R$ xx,xx</option>
+    <option value="139.90">350g — R$ xx.xx</option>
+  </select>
+  <p class="price">R$ 99,90</p>
+  <button onclick="addItem(this, 'Ovo de Colher Crocante com Brownie')">
+    Adicionar
+  </button>
+</div>
+
+<!-- cocô queimado -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="da1.jpeg" class="active">
+    <img src="da2.jpeg">
+    <img src="da3.jpeg">
+    <img src="da2.jpeg">
+
+    <button class="arrow prev">‹</button>
+    <button class="arrow next">›</button>
+  </div>
+  <h3>Ovo de Colher Cocô Queimado</h3>
+  <p>Cocô queimado com creme de doce de leite</p>
+  <!-- TAMANHO -->
+  <select class="size" onchange="updatePrice(this)">
+    <option value="99.90">200g — R$ 99,90</option>
+    <option value="139.90">350g — R$ 139,90</option>
+  </select>
+  <p class="price">R$ 99,90</p>
+  <button onclick="addItem(this, 'Ovo de Colher Cocô Queimado')">
+    Adicionar
+  </button>
+</div>
+
+<!--supremo de morango-->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="da1.jpeg" class="active">
+    <img src="da2.jpeg">
+    <img src="da3.jpeg">
+    <img src="da2.jpeg">
+
+    <button class="arrow prev">‹</button>
+    <button class="arrow next">›</button>
+  </div>
+  <h3>Ovo de Colher Supremo de Morango</h3>
+  <p>Brigadeiro branco com geleia de morango</p>
+  <!-- TAMANHO -->
+  <select class="size" onchange="updatePrice(this)">
+    <option value="99.90">200g — R$ 99,90</option>
+    <option value="139.90">350g — R$ 139,90</option>
+  </select>
+  <p class="price">R$ 99,90</p>
+  <button onclick="addItem(this, 'Ovo de Colher Brigadeiro')">
+    Adicionar
+  </button>
+</div>
+
+<!--Amendoin ao leite-->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="da1.jpeg" class="active">
+    <img src="da2.jpeg">
+    <img src="da3.jpeg">
+    <img src="da2.jpeg">
+
+    <button class="arrow prev">‹</button>
+    <button class="arrow next">›</button>
+  </div>
+  <h3>Ovo de Colher Amendoin ao Leite</h3>
+  <p>Camadas de brigadeiro ao leite intercalado com amendoim triturado, bem crocante</p>
+  <!-- TAMANHO -->
+  <select class="size" onchange="updatePrice(this)">
+    <option value="99.90">200g — R$ 99,90</option>
+    <option value="139.90">350g — R$ 139,90</option>
+  </select>
+  <p class="price">R$ 99,90</p>
+  <button onclick="addItem(this, 'Ovo de Colher Amendoin ao Leite')">
+    Adicionar
+  </button>
+</div>
+
+<!-- Specullos -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="da1.jpeg" class="active">
+    <img src="da2.jpeg">
+    <img src="da3.jpeg">
+    <img src="da2.jpeg">
+
+    <button class="arrow prev">‹</button>
+    <button class="arrow next">›</button>
+  </div>
+  <h3>Ovo de Colher Specullos</h3>
+  <p>brigadeiro branco com farofinha de bolacha lotus( bolacha belga amanteigada e caramelizada) e ganache de chocolate meio amargo com especiarias</p>
+  <!-- TAMANHO -->
+  <select class="size" onchange="updatePrice(this)">
+    <option value="99.90">200g — R$ 99,90</option>
+    <option value="139.90">350g — R$ 139,90</option>
+  </select>
+  <p class="price">R$ 99,90</p>
+  <button onclick="addItem(this, 'Ovo de Colher Specullos')">
+    Adicionar
+  </button>
+</div>
+
+</div>
+
+
+<!-- ovos recheados -->
+<div class="produtos" id="ovos-recheados">
+
+<h2>Ovos Recheados</h2>
+
+<!-- brigadeiro ao leite -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="da1.jpeg" class="active">
+    <img src="da2.jpeg">
+    <img src="da3.jpeg">
+    <img src="da2.jpeg">
+
+    <button class="arrow prev">‹</button>
+    <button class="arrow next">›</button>
+  </div>
+  <h3>Ovo Recheado Brigadeiro ao leite</h3>
+  <p>O clássico brigadeiro ao leite, cremoso e irresistível, recheando um ovo de chocolate ao leite de alta qualidade.</p>
+  <!-- TAMANHO -->
+  <select class="size" onchange="updatePrice(this)">
+    <option value="99.90">200g — R$ 99,90</option>
+    <option value="139.90">350g — R$ 139,90</option>
+  </select>
+  <p class="price">R$ 99,90</p>
+  <button onclick="addItem(this, 'Ovo Recheado Brigadeiro ao leite')">
+    Adicionar
+  </button>
+</div>
+
+<!-- Maracujá -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="da1.jpeg" class="active">
+    <img src="da2.jpeg">
+    <img src="da3.jpeg">
+    <img src="da2.jpeg">
+
+    <button class="arrow prev">‹</button>
+    <button class="arrow next">›</button>
+  </div>
+  <h3>Ovo Recheado Maracujá</h3>
+  <p>Duas textura, ganache de maracujá com geleia azedinha de maracujá</p>
+  <!-- TAMANHO -->
+  <select class="size" onchange="updatePrice(this)">
+    <option value="99.90">200g — R$ 99,90</option>
+    <option value="139.90">350g — R$ 139,90</option>
+  </select>
+  <p class="price">R$ 99,90</p>
+  <button onclick="addItem(this, 'Ovo Recheado Maracujá')">
+    Adicionar
+  </button>
+</div>
+
+<!-- Floresta negra -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="da1.jpeg" class="active">
+    <img src="da2.jpeg">
+    <img src="da3.jpeg">
+    <img src="da2.jpeg">
+
+    <button class="arrow prev">‹</button>
+    <button class="arrow next">›</button>
+  </div>
+  <h3>Ovo Recheado Floresta Negra</h3>
+  <p>Brigadeiro ao leite com cereja</p>
+  <!-- TAMANHO -->
+  <select class="size" onchange="updatePrice(this)">
+    <option value="99.90">200g — R$ 99,90</option>
+    <option value="139.90">350g — R$ 139,90</option>
+  </select>
+  <p class="price">R$ 99,90</p>
+  <button onclick="addItem(this, 'Ovo Recheado Floresta Negra')">
+    Adicionar
+  </button>
+</div>
+
+</div>
+
+<!-- Kit Degustação -->
+<div class="produtos" id="kits">
+
+<h2>Kit Degustação</h2>
 
 <div class="card">
   <!-- CARROSSEL -->
@@ -656,65 +916,19 @@ button{
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
   </div>
-  <h3>Ovo de Colher Brigadeiro</h3>
+  <h3>Ovo Recheado Maracuja</h3>
   <!-- TAMANHO -->
   <select class="size" onchange="updatePrice(this)">
     <option value="99.90">200g — R$ 99,90</option>
     <option value="139.90">350g — R$ 139,90</option>
   </select>
   <p class="price">R$ 99,90</p>
-  <button onclick="addItem(this, 'Ovo de Colher Brigadeiro')">
+  <button onclick="addItem(this, 'Ovo Recheado Maracuja')">
     Adicionar
   </button>
 </div>
-
-<div class="card">
-  <!-- CARROSSEL -->
-  <div class="carousel">
-    <img src="da1.jpeg" class="active">
-    <img src="da2.jpeg">
-    <img src="da3.jpeg">
-    <img src="da2.jpeg">
-
-    <button class="arrow prev">‹</button>
-    <button class="arrow next">›</button>
-  </div>
-  <h3>Ovo de Colher Brigadeiro</h3>
-  <!-- TAMANHO -->
-  <select class="size" onchange="updatePrice(this)">
-    <option value="99.90">200g — R$ 99,90</option>
-    <option value="139.90">350g — R$ 139,90</option>
-  </select>
-  <p class="price">R$ 99,90</p>
-  <button onclick="addItem(this, 'Ovo de Colher Brigadeiro')">
-    Adicionar
-  </button>
 </div>
 
-<div class="card">
-  <!-- CARROSSEL -->
-  <div class="carousel">
-    <img src="da1.jpeg" class="active">
-    <img src="da2.jpeg">
-    <img src="da3.jpeg">
-    <img src="da2.jpeg">
-
-    <button class="arrow prev">‹</button>
-    <button class="arrow next">›</button>
-  </div>
-  <h3>Ovo de Colher Brigadeiro</h3>
-  <!-- TAMANHO -->
-  <select class="size" onchange="updatePrice(this)">
-    <option value="99.90">200g — R$ 99,90</option>
-    <option value="139.90">350g — R$ 139,90</option>
-  </select>
-  <p class="price">R$ 99,90</p>
-  <button onclick="addItem(this, 'Ovo de Colher Brigadeiro')">
-    Adicionar
-  </button>
-</div>
-
-</div>
 
 <div class="cart-btn" onclick="toggleCart()">🛒</div>
 
@@ -735,7 +949,7 @@ button{
     <option value="Retirada">Retirada</option>
     <option value="Entrega">Entrega (Taxa R$7)</option>
   </select>
-  <input type="date" id="data">
+  <input type="date" id="data" placeholder="Data da retirada">
   <h4>Pagamento</h4>
   <select id="pagamento">
     <option value="Pix">Pix</option>
@@ -859,7 +1073,6 @@ function enviar(){
   })
   msg += `\n💰 *Total:* ${document.getElementById('total').innerText}`
   msg += `\n\n👤 *Cliente:* ${nome.value}`
-  msg += `\n📞 *WhatsApp:* ${whats.value}`
   msg += `\n📦 *Tipo:* ${tipo.value}`
   msg += `\n📅 *Data:* ${data.value}`
   msg += `\n💳 *Pagamento:* ${pagamento.value}`
@@ -871,6 +1084,9 @@ function enviar(){
     "https://wa.me/553492950591?text=" + encodeURIComponent(msg),
     "_blank"
   )
+  localStorage.removeItem('carrinho')
+carrinho = []
+atualizarCarrinho()
 }
 
 document.querySelectorAll('.carousel').forEach(carousel=>{
@@ -929,7 +1145,14 @@ document.querySelectorAll('.carousel').forEach(carousel=>{
   })
 })
 
+const carrinhoSalvo = localStorage.getItem('carrinho')
+
+if(carrinhoSalvo){
+  carrinho = JSON.parse(carrinhoSalvo)
+  atualizarCarrinho()
+}
+
 </script>
 
 </body>
-</html>
+</html>"
