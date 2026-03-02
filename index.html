@@ -184,7 +184,7 @@ header span{
 .produtos{
   padding:70px 25px;
   display:grid;
-  grid-template-columns:repeat(2, 1fr);
+  grid-template-columns:repeat(4, 1fr);
   gap:40px;
 }
 
@@ -426,6 +426,7 @@ button:hover{
   border-radius:15px;
   border:1px solid #ddd;
   margin-bottom:10px;
+  color: var(--brown);
 }
 
 .cart textarea{
@@ -790,6 +791,8 @@ function atualizarCarrinho(){
 
   document.getElementById('total').innerText =
     'R$ ' + total.toFixed(2).replace('.',',')
+
+  localStorage.setItem('carrinho', JSON.stringify(carrinho))
 }
 
 function addItem(btn, nome){
