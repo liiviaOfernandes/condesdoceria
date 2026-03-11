@@ -2017,8 +2017,7 @@ function scrollToSection(id){
   }
 
 }
-
-/* =========================
+/* ========================= 
    ENVIAR WHATSAPP
 ========================= */
 
@@ -2039,40 +2038,61 @@ function enviarWhats(){
     return
   }
 
-  let msg = "*Pedido - Conde's Doces* %0A%0A"
+  // formatar data
+  let dataFormatada = data
+  if(data){
+    const partes = data.split("-")
+    dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`
+  }
+
+  let msg = "*PEDIDO - Conde's Doces* %0A"
+  msg += "━━━━━━━━━━━━━━━━━━ %0A%0A"
+
+  msg += "*ITENS DO PEDIDO* %0A%0A"
 
   carrinho.forEach(item=>{
-    msg += ` ${item.nome} %0A`
-    if(item.sabores && item.sabores.length){
-msg += `Sabores: ${item.sabores.join(", ")} %0A`
-}
 
-if(item.embalagem){
-msg += `Embalagem: ${item.embalagem} %0A`
-}
-    msg += `Quantidade: ${item.qtd} %0A`
-    msg += `Valor: R$ ${item.preco.toFixed(2)} %0A%0A`
+    const subtotal = item.preco * item.qtd
+
+    msg += `${item.nome} %0A`
+
+    if(item.tamanho){
+      msg += `  Tamanho: ${item.tamanho} %0A`
+    }
+
+    if(item.sabores && item.sabores.length){
+      msg += `  Sabores: ${item.sabores.join(", ")} %0A`
+    }
+
+    if(item.embalagem){
+      msg += `  Embalagem: ${item.embalagem} %0A`
+    }
+
+    msg += `  Quantidade: ${item.qtd} %0A`
+    msg += `  Subtotal: R$ ${subtotal.toFixed(2)} %0A%0A`
+
   })
 
   const total = document.getElementById("total").innerText
 
-  msg += " *Resumo do Pedido* %0A"
-  msg += `${total} %0A%0A`
+  msg += "━━━━━━━━━━━━━━━━━━ %0A"
+  msg += `${total} %0A`
+  msg += "━━━━━━━━━━━━━━━━━━ %0A%0A"
 
-  msg += " *Cliente* %0A"
-  msg += `${nome} %0A`
-
-  msg += " *Data de retirada/entrega* %0A"
-  msg += `${data} %0A`
-
-  msg += " *Pagamento* %0A"
-  msg += `${pagamento} %0A`
+  msg += "*DADOS DO CLIENTE* %0A"
+  msg += `Nome: ${nome} %0A`
+  msg += `Entrega: Retirada %0A`
+  msg += `Data: ${dataFormatada} %0A`
+  msg += `Pagamento: ${pagamento} %0A`
 
   if(obs){
-    msg += `%0A Observações: ${obs}`
+    msg += `Observações: ${obs} %0A`
   }
 
-  const telefone = "5534992950591" // coloque seu número aqui
+  msg += "%0AObrigado por escolher a Conde's Doces. %0A"
+  msg += "Entraremos em contato para confirmar seu pedido."
+
+  const telefone = "553492950591"
 
   const url = `https://wa.me/${telefone}?text=${msg}`
 
