@@ -731,22 +731,22 @@ cursor:pointer;
      <img src="logomarrom.png" alt="Conde’s Doces" style="width:50%; margin-bottom:5px;">
     <h2>Bem-vindo à <br>Conde’s Doces</h2>
 
-    <p>
-      Nossos produtos são artesanais e não possuem conservantes.
-      No dia da retirada, você pode armazená-los em temperatura ambiente
-      por até<br> <b>1 dia</b>, de preferência em local climatizado.
-    </p>
+<p>
+Nossos produtos são artesanais e não possuem conservantes.
+Recomendamos o consumo no mesmo dia da retirada ou,
+se necessário, armazenar em geladeira.
+</p>
 
-    <p>
-      Após esse período, recomendamos armazenar em geladeira.
-      O consumo imediato garante a melhor experiência de sabor.
-    </p>
+<p>
+Para garantir a melhor experiência de sabor e textura,
+evite expor o produto a temperaturas abaixo de 10°C
+ou acima de 24°C.
+</p>
 
-    <p>
-      Os produtos podem sofrer alterações de sabor e textura
-      se expostos a temperaturas inferiores a 10°C
-      ou superiores a 24°C.
-    </p>
+<p>
+Reservas são confirmadas mediante pagamento de
+<b>50% do valor</b> via <b>Pix ou cartão</b>.
+</p>
 
     <button onclick="fecharPopup()">Entendi</button>
 
@@ -1685,7 +1685,7 @@ cursor:pointer;
   <h3>Finalizar Pedido</h3>
   <input type="text" id="nome" placeholder="Nome completo">
     <h4>Data de Retirada</h4>
-  <input type="date" id="data" min="2026-03-09" max="2026-04-05">
+  <input type="date" id="data" min="2026-03-09" max="2026-04-04">
   <h4>Pagamento</h4>
   <select id="pagamento">
     <option value="Pix">Pix</option>
@@ -1762,6 +1762,20 @@ function atualizarCarrinho(){
   localStorage.setItem("carrinho",JSON.stringify(carrinho))
 
 }
+
+const dataInput = document.getElementById("data");
+
+dataInput.addEventListener("change", function(){
+
+  const dataSelecionada = new Date(this.value)
+  const dia = dataSelecionada.getDate()
+
+  if(dia === 3){
+    alert("Não realizamos pedidos para retirada no dia 03.")
+    this.value = ""
+  }
+
+})
 
 /* =========================
    ADICIONAR PRODUTO
