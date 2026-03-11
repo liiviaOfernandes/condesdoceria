@@ -341,6 +341,27 @@ font-weight:500;
   transition:.4s;
 }
 
+.dots{
+display:flex;
+justify-content:center;
+gap:6px;
+margin-top:10px;
+}
+
+.dot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#ccc;
+transition:0.3s;
+cursor:pointer;
+}
+
+.dot.active{
+background:#39180c;
+transform:scale(1.2);
+}
+
 .carousel img.active{
   display:block;
 }
@@ -694,7 +715,10 @@ cursor:pointer;
   font-size:15px;
   line-height:1.2;
 }
-
+.popup-box{
+  padding:40px 20px;
+  width: 80%;
+}
 }
 </style>
 </head>
@@ -705,7 +729,7 @@ cursor:pointer;
   <div class="popup-bg" id="popup">
   <div class="popup-box">
      <img src="logomarrom.png" alt="Conde’s Doces" style="width:50%; margin-bottom:5px;">
-    <h2>Bem-vindo à Conde’s Doces</h2>
+    <h2>Bem-vindo à <br>Conde’s Doces</h2>
 
     <p>
       Nossos produtos são artesanais e não possuem conservantes.
@@ -719,7 +743,7 @@ cursor:pointer;
     </p>
 
     <p>
-      Os produtos podem sofrer alteração de sabor e textura
+      Os produtos podem sofrer alterações de sabor e textura
       se expostos a temperaturas inferiores a 10°C
       ou superiores a 24°C.
     </p>
@@ -752,7 +776,7 @@ cursor:pointer;
     <img src="IMG_9873.jpg"><h4>Ovos Recheados</h4>
   </div>
   <div class="mini" onclick="scrollToSection('kits')">
-    <img src="kit.jpg"><h4>Kit Degustação</h4>
+    <img src="acolher.jpg"><h4>Lembrancinhas</h4>
   </div>
 </section>
 
@@ -787,10 +811,16 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+    <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Dois Amores</h3>
+    <h2 style="color: #38180C;">150g</h2>
+    
 
     <p class="desc">
       Casca de chocolate recheada com camadas cremosas de brigadeiro ao leite 
@@ -798,6 +828,7 @@ cursor:pointer;
     </p>
 
 <!-- Embalagem -->
+ <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
     <option value="celebrar">Celebrar</option>
     <option value="acolher">Acolher</option>
@@ -837,18 +868,24 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Crocante com Brownie</h3>
+    <h2 style="color: #38180C;">150g</h2>
 
     <p class="desc">
-      Recheio de creme crocante de Ovomaltine, 
+      Recheio de creme crocante de Ovomaltine®, 
       combinado com pedaços de brownie macio, 
       proporcionando uma mistura irresistível de cremosidade e crocância
     </p>
 
 <!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
     <option value="celebrar">Celebrar</option>
     <option value="acolher">Acolher</option>
@@ -888,16 +925,22 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+    
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Cocô Queimado</h3>
+    <h2 style="color: #38180C;">150g</h2>
 
     <p class="desc">
-      Delicado creme de coco queimado combinado com doce de leite cremoso, trazendo um sabor marcante e levemente caramelizado.
+      Recheio de doce de leite com coco queimado combinado, trazendo um sabor marcante e levemente caramelizado.
     </p>
 
 <!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
   <option value="celebrar">Celebrar</option>
   <option value="acolher">Acolher</option>
@@ -937,10 +980,15 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
  <div class="card-body">
 
     <h3>Supremo de Morango</h3>
+    <h2 style="color: #38180C;">150g</h2>
 
     <p class="desc">
       Camadas de brigadeiro branco cremoso harmonizadas
@@ -948,6 +996,7 @@ cursor:pointer;
     </p>
 
 <!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
   <option value="celebrar">Celebrar</option>
   <option value="acolher">Acolher</option>
@@ -987,10 +1036,15 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Amendoin ao Leite</h3>
+    <h2 style="color: #38180C;">150g</h2>
 
     <p class="desc">
       Generosas camadas de brigadeiro ao leite intercaladas 
@@ -999,6 +1053,7 @@ cursor:pointer;
     </p>
 
 <!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
   <option value="celebrar">Celebrar</option>
   <option value="acolher">Acolher</option>
@@ -1038,19 +1093,24 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Speculoos</h3>
-    <h2>150g</h2>
+    <h2 style="color: #38180C;">150g</h2>
 
     <p class="desc">
       Recheio de brigadeiro branco cremoso, com farofinha crocante de biscoito Lotus 
-      Speculoos (biscoito belga amanteigado e caramelizado) finalizado com ganache de 
+      Speculoos® (biscoito belga amanteigado e caramelizado) finalizado com ganache de 
       chocolate meio amargo com especiarias.
     </p>
 
   <!-- Embalagem -->
+    <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
   <select class="embalagem" onchange="updateEmbalagem(this)">
     <option value="celebrar">Celebrar</option>
     <option value="acolher">Acolher</option>
@@ -1093,12 +1153,16 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
 
   <div class="card-body">
 
     <h3>Brigadeiro ao leite</h3>
-    <h2 style="color: #38180C;">300g</h2>
+    <h2 style="color: #38180C;">400g</h2>
 
     <p class="desc">
       O clássico brigadeiro ao leite, cremoso e irresistível,
@@ -1106,13 +1170,14 @@ cursor:pointer;
     </p>
 
 <!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
   <option value="celebrar">Celebrar</option>
   <option value="acolher">Acolher</option>
 </select>
 
     <div class="mobile-row">
-      <h3 class="price">R$ 108,00</h3>
+      <h3 class="price">R$ 110,00</h3>
 
       <div class="qtd">
         <button onclick="changeQty(this,-1)">-</button>
@@ -1142,11 +1207,15 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Ganache de Maracujá</h3>
-    <h2 style="color: #38180C;">300g</h2>
+    <h2 style="color: #38180C;">400g</h2>
 
     <p class="desc">
       Recheio com duas texturas de maracujá: uma ganache cremosa combinada com geleia 
@@ -1154,13 +1223,14 @@ cursor:pointer;
     </p>
 
      <!-- Embalagem -->
+       <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
     <select class="embalagem" onchange="updateEmbalagem(this)">
       <option value="celebrar">Celebrar</option>
       <option value="acolher">Acolher</option>
     </select>
 
     <div class="mobile-row">
-      <h3 class="price">R$ 108,00</h3>
+      <h3 class="price">R$ 110,00</h3>
 
       <div class="qtd">
         <button onclick="changeQty(this,-1)">-</button>
@@ -1190,10 +1260,15 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Floresta Negra</h3>
+    <h2 style="color: #38180C;">400g</h2>
 
     <p class="desc">
       Inspirado na clássica sobremesa alemã, com brigadeiro ao leite cremoso
@@ -1201,13 +1276,14 @@ cursor:pointer;
     </p>
 
 <!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
   <option value="celebrar">Celebrar</option>
   <option value="acolher">Acolher</option>
 </select>
 
     <div class="mobile-row">
-      <h3 class="price">R$ 108,00</h3>
+      <h3 class="price">R$ 110,00</h3>
 
       <div class="qtd">
         <button onclick="changeQty(this,-1)">-</button>
@@ -1235,11 +1311,15 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Meio Brigadeiro ao Leite • Meio Maracujá</h3>
-    <h2 style="color: #38180C;">300g</h2>
+    <h2 style="color: #38180C;">400g</h2>
 
     <p class="desc">
       Ovo de chocolate ao leite com recheio dividido em duas metades: 
@@ -1249,13 +1329,14 @@ cursor:pointer;
     </p>
 
     <!-- Embalagem -->
+      <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
   <option value="celebrar">Celebrar</option>
   <option value="acolher">Acolher</option>
 </select>
 
     <div class="mobile-row">
-      <h3 class="price">R$ 108,00</h3>
+      <h3 class="price">R$ 110,00</h3>
 
       <div class="qtd">
         <button onclick="changeQty(this,-1)">-</button>
@@ -1283,11 +1364,15 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Meio Brigadeiro ao Leite • Floresta Negra</h3>
-    <h2 style="color: #38180C;">300g</h2>
+    <h2 style="color: #38180C;">400g</h2>
 
     <p class="desc">
       Ovo de chocolate ao leite com recheio dividido em duas metades: 
@@ -1295,13 +1380,14 @@ cursor:pointer;
     </p>
 
 <!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
   <option value="celebrar">Celebrar</option>
   <option value="acolher">Acolher</option>
 </select>
 
     <div class="mobile-row">
-      <h3 class="price">R$ 108,00</h3>
+      <h3 class="price">R$ 110,00</h3>
 
       <div class="qtd">
         <button onclick="changeQty(this,-1)">-</button>
@@ -1329,11 +1415,15 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
     <h3>Meio Ganache de Maracujá • Meio Floresta Negra</h3>
-    <h2 style="color: #38180C;">300g</h2>
+    <h2 style="color: #38180C;">400g</h2>
 
     <p class="desc">
       Ovo de chocolate ao leite com recheio dividido em duas metades: 
@@ -1341,13 +1431,14 @@ cursor:pointer;
     </p>
 
 <!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 <select class="embalagem" onchange="updateEmbalagem(this)">
   <option value="celebrar">Celebrar</option>
   <option value="acolher">Acolher</option>
 </select>
 
     <div class="mobile-row">
-      <h3 class="price">R$ 108,00</h3>
+      <h3 class="price">R$ 110,00</h3>
 
       <div class="qtd">
         <button onclick="changeQty(this,-1)">-</button>
@@ -1380,6 +1471,10 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
@@ -1416,7 +1511,7 @@ cursor:pointer;
 </div>
 
 <!-- Embalagem -->
-<p><b>Escolha a embalagem</b></p>
+ <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
 
 <select class="embalagem" onchange="updateEmbalagem(this)">
   <option value="celebrar">Celebrar</option>
@@ -1450,6 +1545,10 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+
   </div>
   <div class="card-body">
 
@@ -1510,6 +1609,10 @@ cursor:pointer;
 
     <button class="arrow prev">‹</button>
     <button class="arrow next">›</button>
+
+      <!-- BOLINHAS -->
+  <div class="dots"></div>
+  
   </div>
   <div class="card-body">
 
@@ -1821,31 +1924,82 @@ function changeQty(btn,change){
 document.querySelectorAll(".carousel").forEach(carousel => {
 
   const imagens = carousel.querySelectorAll("img")
+  const dotsContainer = carousel.querySelector(".dots")
+
   let index = 0
 
+  /* criar bolinhas */
+  imagens.forEach((img,i)=>{
+
+    const dot = document.createElement("span")
+    dot.classList.add("dot")
+
+    if(i === 0){
+      img.classList.add("active")
+      dot.classList.add("active")
+    }
+
+    dot.addEventListener("click", ()=> {
+      mostrar(i)
+    })
+
+    dotsContainer.appendChild(dot)
+
+  })
+
+  const dots = dotsContainer.querySelectorAll(".dot")
+
   function mostrar(i){
-    imagens.forEach(img => img.classList.remove("active"))
-    imagens[i].classList.add("active")
+
+    imagens[index].classList.remove("active")
+    dots[index].classList.remove("active")
+
+    index = i
+
+    imagens[index].classList.add("active")
+    dots[index].classList.add("active")
+
   }
 
+  /* clique na imagem para trocar */
   carousel.addEventListener("click", e => {
 
     const largura = carousel.offsetWidth
     const clique = e.offsetX
 
     if(clique > largura/2){
-      index++
-      if(index >= imagens.length) index = 0
+      let novo = (index + 1) % imagens.length
+      mostrar(novo)
     }else{
-      index--
-      if(index < 0) index = imagens.length - 1
+      let novo = (index - 1 + imagens.length) % imagens.length
+      mostrar(novo)
     }
-
-    mostrar(index)
 
   })
 
+  /* setas */
+
+  const next = carousel.querySelector(".next")
+  const prev = carousel.querySelector(".prev")
+
+  if(next){
+    next.onclick = (e)=>{
+      e.stopPropagation()
+      let novo = (index + 1) % imagens.length
+      mostrar(novo)
+    }
+  }
+
+  if(prev){
+    prev.onclick = (e)=>{
+      e.stopPropagation()
+      let novo = (index - 1 + imagens.length) % imagens.length
+      mostrar(novo)
+    }
+  }
+
 })
+
 
 /* =========================
    SCROLL PARA SEÇÕES
@@ -1918,7 +2072,7 @@ msg += `Embalagem: ${item.embalagem} %0A`
     msg += `%0A Observações: ${obs}`
   }
 
-  const telefone = "553492950591" // coloque seu número aqui
+  const telefone = "5534992950591" // coloque seu número aqui
 
   const url = `https://wa.me/${telefone}?text=${msg}`
 
