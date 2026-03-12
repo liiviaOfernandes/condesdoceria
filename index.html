@@ -1770,7 +1770,7 @@ dataInput.addEventListener("change", function(){
   const dataSelecionada = new Date(this.value)
   const dia = dataSelecionada.getDate()
 
-  if(dia === 3){
+  if(dia === 2){
     alert("Não realizamos pedidos para retirada no dia 03.")
     this.value = ""
   }
@@ -2122,11 +2122,11 @@ function fecharPopup(){
 
 window.onload = function(){
 
- /* const visto = localStorage.getItem("popupVisto")
+ const visto = localStorage.getItem("popupVisto")
 
   if(visto === "sim"){
     document.getElementById("popup").style.display = "none"
-  }*/
+  }
 
 }
 /* =========================
