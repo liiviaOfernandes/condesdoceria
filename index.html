@@ -738,10 +738,6 @@ cursor:pointer;
     line-height: 1.2;
   }
 
-  .produtos{
-    grid-template-columns:repeat(2,1fr);
-  }
-S
   .produtos img{
     size: 50%;
   }
@@ -765,7 +761,7 @@ S
 @media (max-width:768px){
 
   .produtos{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(2,1fr);
     gap:25px;
   }
 
@@ -2264,9 +2260,7 @@ window.onload = function(){
 
  const visto = localStorage.getItem("popupVisto")
 
-  if(visto === "sim"){
-    document.getElementById("popup").style.display = "none"
-  }
+  
 
 }
 /* =========================
