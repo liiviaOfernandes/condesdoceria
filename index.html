@@ -132,6 +132,8 @@ header span{
   padding:60px 25px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
+  align-items: center;
+  width: 60%;
   gap:35px;
   text-align:center;
 }
@@ -183,7 +185,7 @@ header span{
 .produtos{
   padding:60px 25px;
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:35px;
   text-align:center;
 }
@@ -761,7 +763,7 @@ cursor:pointer;
 @media (max-width:768px){
 
   .produtos{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(1,1fr);
     gap:25px;
   }
 
@@ -2249,21 +2251,14 @@ function enviarWhats(){
   window.open(url, "_blank")
 }
 /* =========================
-   FECHAR POPUP E MARCAR COMO VISTO
+  FECHAR POPUP E MARCAR COMO VISTO
 ========================= */
 function fecharPopup(){
   document.getElementById("popup").style.display = "none"
   localStorage.setItem("popupVisto", "sim")
 }
 
-window.onload = function(){
-
- const visto = localStorage.getItem("popupVisto")
-
-  
-
-}
-/* =========================
+/* ========================
     ATUALIZAR EMBALAGEM
 ========================= */
 function updateEmbalagem(select){
