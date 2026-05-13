@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Conde’s Doces</title>
+
+<!-- Montserrat -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* =====================================================
+   FONTES LOCAIS
+===================================================== */
+@font-face{
+  font-family:'Gallient';
+  src:url('Gallient.ttf') format('truetype');
+}
+
+@font-face{
+  font-family:'Beverly';
+  src:url('Beverly.ttf') format('truetype');
+}
+
+/* =====================================================
+   VARIÁVEIS DA MARCA
+===================================================== */
+:root{
+  --bg-main:#FFFEEF;
+  --bg-soft:#F3E6DA;
+  --bg-card:#FFFDF9;
+
+  --brown:#38180C;
+  --brown-soft:#6B3E2E;
+
+  --cta:#BE513A;
+  --gold:#C9A24D;
+}
+
+/* =====================================================
+   RESET GLOBAL
+===================================================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+body{
+  background:var(--brown);
+  font-family:'Montserrat',sans-serif;
+  color:var(--bg-main);
+  line-height:1.6;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+header{
+  text-align:center;
+  padding:5px 15px 30px;
+}
+
+header img.logo{
+  display:block;
+  margin:50px auto ;
+  max-width:200px;
+}
+
+header h1{
+  font-family:'Gallient',serif;
+  font-size:42px;
+  color:var(--brown-soft);
+}
+
+header span{
+  font-size:14px;
+  letter-spacing:.5px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+.hero{
+  position:relative;
+  background:
+    linear-gradient(
+      rgba(255,255,255,.17),
+      rgba(41,6,6,.57)
+    ),
+    url('hero.png') center/cover no-repeat;
+
+  padding:10%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+  overflow:hidden;
+}
+
+.hero h2{
+  font-family:'Gallient',serif;
+  font-size:40px;
+  line-height:1.1;
+}
+
+.hero p{
+  margin-top:15px;
+  max-width:440px;
+  font-size:15px;
+  color:var(--bg-soft);
+}
+
+.hero img{
+  width:100%;
+  border-radius:45px;
+}
+
+/* =====================================================
+   DESTAQUES
+===================================================== */
+.destaques{
+  padding:60px 25px;
+
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+  gap:40px;
+
+  max-width:900px;
+  margin:0 auto;
+
+  text-align:center;
+}
+
+.mini{
+  background:var(--bg-card);
+  border-radius:20px;
+  padding:25px 20px;
+  cursor:pointer;
+  box-shadow:0 12px 30px rgba(56,24,12,.08);
+}
+
+.mini img{
+  width:100%;
+  border-radius:12px;
+}
+
+.mini h4{
+  font-family:'Beverly',serif;
+  font-size:30px;
+  margin-top:12px;
+  color:var(--brown);
+  line-height: 1.2;
+}
+
+/* =====================================================
+   SEÇÃO ARTESANAL
+===================================================== */
+.artesanal{
+  background:var(--brown-soft);
+  padding:70px 25px;
+  text-align:center;
+}
+
+.artesanal h2{
+  font-family:'Gallient',serif;
+  font-size:36px;
+}
+
+.artesanal p{
+  max-width:620px;
+  margin:15px auto 0;
+  font-size:15px;
+}
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
+.produtos{
+  padding:60px 25px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:35px;
+  text-align:center;
+}
+
+.produtos h2{
+  grid-column:1/-1;
+  font-family:'Gallient',serif;
+  font-size:15px;
+  text-align:center;
+  color:var(--bg-soft);
+}
+
+.produtos p{
+  font-size:14px;
+  color:var(--brown-soft);
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  margin: 7px 1px;
+  line-height:1.2;
+}
+
+.card{
+  background:var(--bg-card);
+  border-radius:50px;
+  padding:20px;
+  box-shadow:0 18px 35px rgba(56,24,12,.1);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card img{
+  width:100%;
+  border-radius:40px;
+  transition:.4s;
+  cursor:zoom-in;
+}
+
+
+
+.card img:hover{
+  transform:scale(1.05);
+}
+
+.card h3{
+  font-family:'Gallient',serif;
+  font-size:30px;
+  margin-top:18px;
+  color:var(--brown);
+  line-height:1.2;
+}
+
+.price{
+  font-size:30px;
+  font-weight:600;
+  margin:8px 0 14px;
+  color:var(--brown);
+}
+
+.mobile-row{
+   display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+    font-size:30px;
+  font-weight:600;
+  margin:8px 0 14px;
+  color:var(--brown);
+}
+
+.contador-sabores{
+font-size:12px;
+color:#6B3E2E;
+margin-bottom:8px;
+font-weight:500;
+}
+
+/* =====================================================
+   SELECT TAMANHO
+===================================================== */
+.embalagem{
+  width:100%;
+  padding:14px 18px;
+  border-radius:28px;
+  border:1.5px solid #e3d6cc;
+  background:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-size:14px;
+  font-weight:500;
+  color:var(--brown);
+  appearance:none;
+  cursor:pointer;
+  transition:.3s;
+
+  background-image:
+    linear-gradient(45deg,transparent 50%,var(--brown) 50%),
+    linear-gradient(135deg,var(--brown) 50%,transparent 50%);
+  background-position:
+    calc(100% - 22px) calc(50% - 3px),
+    calc(100% - 17px) calc(50% - 3px);
+  background-size:5px 5px;
+  background-repeat:no-repeat;
+}
+
+.embalagem:hover{
+  border-color:var(--cta);
+}
+
+.embalagem:focus{
+  outline:none;
+  border-color:var(--cta);
+  box-shadow:0 0 0 3px rgba(190,81,58,.15);
+}
+
+.opcoes{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin:10px 0;
+}
+
+.opcoes label{
+  background:#fff;
+  padding:10px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-size:14px;
+  cursor:pointer;
+  color: var(--brown);
+}
+
+.opcoes input{
+  margin-right:6px;
+}
+/* =====================================================
+   CARROSSEL CLEAN (SEM SETAS VISÍVEIS)
+===================================================== */
+
+.carousel{
+  position:relative;
+  overflow:hidden;
+  border-radius:40px;
+  background:#fff;
+}
+
+.carousel img{
+  width:100%;
+  height:50%;
+  object-fit:cover;
+  object-position:center;
+  display:none;
+  padding: 20px;
+  transition:.4s;
+}
+
+.dots{
+display:flex;
+justify-content:center;
+gap:6px;
+margin-top:10px;
+}
+
+.dot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:#ccc;
+transition:0.3s;
+cursor:pointer;
+}
+
+.dot.active{
+background:#39180c;
+transform:scale(1.2);
+}
+
+.carousel img.active{
+  display:block;
+}
+
+
+/* ESCONDE SETAS */
+.carousel{
+  position:relative;
+}
+
+/* LINHA CONTROLES */
+.carousel-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin-top:10px;
+}
+
+/* SETAS */
+.arrow{
+  background:#38180C;
+  color:white;
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.arrow button{
+  width: 0%;
+  padding: 2%;
+}
+/* BOLINHAS */
+.dots{
+  display:flex;
+  gap:6px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#ccc;
+}
+
+.dot.active{
+  background:#38180C;
+}
+/* =====================================================
+   BOTÕES
+===================================================== */
+button{
+  background:var(--brown);
+  color:#fff;
+  border:none;
+  padding:12px;
+  border-radius:30px;
+  cursor:pointer;
+  font-family:'Montserrat',sans-serif;
+  font-weight:500;
+  transition:.3s;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+/* =====================================================
+   CARRINHO
+===================================================== */
+.cart-btn{
+  
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  background:var(--bg-card);
+  color:var(--brown-soft);
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  z-index:10;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+.close-cart{
+  top:15px;
+  right:15px;
+  background:none;
+  border:none;
+  font-size:24px;
+  color:var(--brown);
+  cursor:pointer;
+}
+.cart{
+  position:fixed;
+  top:0;
+  right:0;
+  width:100%;
+  max-width:420px;
+  height:100%;
+  background:#fff;
+  padding:20px;
+  overflow:auto;
+  transform:translateX(100%);
+  transition:.4s;
+  z-index:20;
+  color:var(--brown);
+  box-shadow: -15px 0 40px rgba(0,0,0,.25);
+}
+.cart-count{
+  position:absolute;
+  top:-5px;
+  right:-5px;
+  background:#BE513A;
+  color:#fff;
+  font-size:12px;
+  font-weight:600;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cart.active{
+  transform:translateX(0);
+}
+
+.cart h2{
+  font-family:'Gallient';
+  margin-bottom:15px;
+}
+
+.cart input,
+.cart select,
+.cart textarea{
+  width:100%;
+  padding:10px;
+  border-radius:15px;
+  border:1px solid #ddd;
+  margin-bottom:10px;
+  color:var(--brown);
+}
+
+.cart textarea{
+  min-height:80px;
+  resize:none;
+}
+
+/* ITEM CARRINHO */
+.item-cart{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-bottom:15px;
+  transition: .3s;
+  background:#faf7f3;
+padding:10px;
+border-radius:14px;
+}
+
+.item-cart img{
+  width:70px;
+  height:70px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+.valor{
+font-weight:600;
+color:var(--brown);
+margin-top:4px;
+}
+
+.qtd{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin:6px 0;
+}
+
+.qtd button{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:var(--brown);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+
+.item-cart.removing{
+opacity:0;
+transform:translateX(40px);
+}
+
+.remove{
+background:none;
+border:none;
+font-size:18px;
+cursor:pointer;
+color:#BE513A;
+}
+
+.resumo{
+background:#faf7f3;
+padding:12px;
+border-radius:14px;
+margin:15px 0;
+}
+
+/* =====================================================
+   POPUP DE INFORMAÇÕES
+===================================================== */
+.popup-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.popup-box{
+background:#FFFDF9;
+max-width:420px;
+width:90%;
+padding:80px;
+border-radius:20px;
+text-align:center;
+color:#38180C;
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.popup-box h2{
+font-family:'Gallient';
+margin-bottom:15px;
+}
+
+.popup-box p{
+font-size:14px;
+margin-bottom:12px;
+line-height:1.5;
+}
+
+.popup-box button{
+margin-top:10px;
+background:var(--brown);
+color:#fff;
+border:none;
+padding:12px 25px;
+border-radius:25px;
+cursor:pointer;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+  background:#2a120a;
+  margin-top:60px;
+  padding-top:40px;
+  color:#F3E6DA;
+}
+
+.footer-container{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  padding:0 25px 30px;
+}
+
+.footer-brand img{
+  width:140px;
+  margin-bottom:10px;
+}
+
+.footer-brand p{
+  font-size:14px;
+  line-height:1.6;
+}
+
+.footer h4{
+  font-family:'Gallient';
+  margin-bottom:10px;
+  color:#C9A24D;
+}
+
+.footer ul{
+  list-style:none;
+  font-size:14px;
+  line-height:1.8;
+}
+
+.footer-contato p{
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  padding:15px;
+  font-size:13px;
+  color:#d6c3b8;
+}
+
+.contato{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.contato a{
+  display:block;
+  text-decoration:none;
+  color:#F3E6DA;
+  font-size:14px;
+  margin:12px 0;
+  transition:0.3s;
+}
+
+/* efeito ao passar o mouse */
+.contato a:hover{
+  color:#C9A24D;
+  transform:scale(1.05);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+  .footer-container{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:25px;
+  }
+
+  .footer-brand img{
+    margin:auto;
+  }
+
+
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+@media(max-width:768px){
+
+  header h1{ font-size:36px; }
+
+  .hero{
+    grid: none;
+    padding:35px 25px;
+  }
+
+  .hero h2{
+    font-size:34px;
+  }
+  .hero p{
+    line-height: 1.2;
+  }
+
+  .produtos img{
+    size: 50%;
+  }
+
+  header img.logo{
+    max-width:80px;
+  }
+  header{
+    padding: 5px;
+  }
+}
+
+@media (max-width:768px){
+  .carousel img{
+    height:40%;
+  }
+}
+/* =====================================================
+   CARD MOBILE PROFISSIONAL
+===================================================== */
+@media (max-width:768px){
+
+
+  .produtos{
+    grid-template-columns:1fr;
+    gap:30px;
+    padding:20px;
+  }
+
+  .card{
+    max-width:380px;
+    margin:0 auto;
+    padding:18px;
+    border-radius:16px;
+  }
+
+  .card h3{
+    font-size:22px;
+    margin-top:10px;
+  }
+
+  .card h2{
+    font-size:18px;
+  }
+
+  .desc{
+    font-size:15px;
+    line-height:1.6;
+    padding:0 8px;
+  }
+
+  .mobile-row{
+    margin-top:10px;
+  }
+
+
+  .desc{
+    font-size:13px;
+    margin-bottom:12px;
+    text-align:center;
+    max-width:280px;
+    margin:0 auto;
+    color:#6B3E2E;
+  }
+
+
+  .size{
+    margin-bottom:10px;
+  }
+
+  .mobile-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+  }
+
+  .price{
+    font-size:22px;
+    font-weight:700;
+  }
+
+  .qtd{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .qtd button{
+    width:30px;
+    height:30px;
+    border-radius:6px;
+    font-size:16px;
+  }
+
+  .card button{
+    padding:16px;
+    font-weight:600;
+    border-radius:12px;
+  }
+}
+
+@media (max-width:768px){
+
+.destaques{
+  grid-template-columns:1fr;
+  gap:18px;
+  padding:20px;
+}
+
+/* card */
+.mini{
+  display:grid;
+  grid-template-columns:110px 1fr;
+  align-items:center;
+
+  padding:16px;
+  border-radius:18px;
+
+  gap:14px;
+
+  background:#f4f1ee;
+}
+
+/* imagem */
+.mini img{
+  width:110px;
+  height:90px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* titulo */
+.mini h4{
+  font-size:22px;
+  margin:0;
+  color:#3b1a12;
+}
+
+/* descrição */
+.mini p{
+  font-size:14px;
+  line-height:1.4;
+  margin-top:6px;
+  color:#6a4b40;
+}
+
+/* popup */
+.popup-box{
+  padding:30px 20px;
+  width:90%;
+  border-radius:16px;
+}
+
+}
+</style>
+
+</head>
+</head>
+
+<body>
+
+
+  <!-- Popup de Informações -->
+  <div class="popup-bg" id="popup">
+  <div class="popup-box">
+     <img src="logomarrom.png" alt="Conde’s Doces" style="width:50%; margin-bottom:5px;">
+    <h2>Bem-vindo à <br>Conde’s Doces</h2>
+
+<p>
+Nossos produtos são artesanais e não possuem conservantes.
+Recomendamos o consumo no mesmo dia da retirada ou,
+se necessário, armazenar em geladeira.
+</p>
+
+<p>
+Para garantir a melhor experiência de sabor e textura,
+evite expor o produto a temperaturas abaixo de 10°C
+ou acima de 24°C.
+</p>
+
+<p>
+Reservas são confirmadas mediante pagamento de
+<b>50% do valor</b> via <b>Pix ou cartão</b>.
+</p>
+
+    <button onclick="fecharPopup()">Entendi</button>
+
+  </div>
+</div>
+
+<header>
+    <img src="logocondes.png" alt="Conde’s Doces" class="logo">
+</header>
+<section class="hero">
+    <div>
+        <h2>Uma Páscoa<br>Irresistível</h2>
+        <p>
+            Ovos artesanais feitos à mão, recheios cremosos e uma apresentação
+            encantadora para presentear.
+        </p>
+    </div>
+</section>
+
+<!-- Destaques -->
+<section class="destaques">
+  <div class="mini" onclick="scrollToSection('ovos-colher')">
+    <img src="IMG_9451-2.jpg">
+    <h4>Ovos de Colher</h4>
+  </div>
+  <div class="mini" onclick="scrollToSection('ovos-recheados')">
+    <img src="IMG_9873-2.jpg">
+    <h4>Ovos Recheados</h4>
+  </div>
+  <div class="mini" onclick="scrollToSection('kits')">
+    <img src="acolher2.jpg">
+    <h4>Lembrancinhas</h4>
+  </div>
+</section>
+
+<!-- Produção Artesanal -->
+<section class="artesanal">
+  <h2>Produção Artesanal</h2>
+  <p>
+    Cada ovo é preparado com cuidado, ingredientes selecionados
+    e aquele toque especial que só a confeitaria artesanal tem.
+  </p>
+</section>
+
+<!-- ovos-colher -->
+<div class="produtos" id="ovos-colher">
+
+<h2 style="font-size: 40px; ">Ovos de Colher</h2>
+
+<!-- Dois amores -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="ovos/IMG_9465.jpg" class="active">
+    <img src="ovos/IMG_9503.jpg">
+    <img src="ovos/IMG_9529.jpg">
+    <img src="1.png">
+    <img src="2.png">
+    <img src="3.png">
+    <img src="4.png">
+    <img src="5.png">
+    <img src="6.png">
+
+<div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Dois Amores</h3>
+    <h2 style="color: #38180C;">150g</h2>
+    
+
+    <p class="desc">
+      Casca de chocolate recheada com camadas cremosas de brigadeiro ao leite 
+      e brigadeiro branco, criando o equilíbrio perfeito entre os dois clássicos sabores.
+    </p>
+
+<!-- Embalagem -->
+ <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+    <option value="Celebrar">Celebrar</option>
+    <option value="Acolher">Acolher</option>
+    <option value="Carinho">Carinho</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 50,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Ovo Recheado Dois Amores')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- crocante com brownie -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="ovos/IMG_9663.jpg" class="active">
+    <img src="ovos/IMG_9648.jpg">
+    <img src="ovos/IMG_9676.jpg">
+    <img src="1.png">
+    <img src="2.png">
+    <img src="3.png">
+    <img src="4.png">
+    <img src="5.png">
+    <img src="6.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Crocante com Brownie</h3>
+    <h2 style="color: #38180C;">150g</h2>
+
+    <p class="desc">
+      Recheio de creme crocante de Ovomaltine®, 
+      combinado com pedaços de brownie macio, 
+      proporcionando uma mistura irresistível de cremosidade e crocância
+    </p>
+
+<!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+    <option value="Celebrar">Celebrar</option>
+    <option value="Acolher">Acolher</option>
+    <option value="Carinho">Carinho</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 50,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Ovo Recheado Crocante com Brownie')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- cocô queimado -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="ovos/IMG_9681.jpg" class="active">
+    <img src="ovos/IMG_9705.jpg">
+    <img src="ovos/IMG_9465.jpg">
+    <img src="1.png">
+    <img src="2.png">
+    <img src="3.png">
+    <img src="4.png">
+    <img src="5.png">
+    <img src="6.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Cocô Queimado</h3>
+    <h2 style="color: #38180C;">150g</h2>
+
+    <p class="desc">
+      Recheio de doce de leite com coco queimado combinado, trazendo um sabor marcante e levemente caramelizado.
+    </p>
+
+<!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+  <option value="Celebrar">Celebrar</option>
+  <option value="Acolher">Acolher</option>
+   <option value="Carinho">Carinho</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 50,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Ovo Recheado Cocô Queimado')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!--supremo de morango-->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="ovos/IMG_9437.jpg" class="active">
+    <img src="ovos/IMG_9494.jpg">
+    <img src="ovos/IMG_9451.jpg">
+    <img src="1.png">
+    <img src="2.png">
+    <img src="3.png">
+    <img src="4.png">
+    <img src="5.png">
+    <img src="6.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+ <div class="card-body">
+
+    <h3>Supremo de Morango</h3>
+    <h2 style="color: #38180C;">150g</h2>
+
+    <p class="desc">
+      Camadas de brigadeiro branco cremoso harmonizadas
+      com geleia artesanal de morango, criando um sabor suave e levemente frutado.
+    </p>
+
+<!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+  <option value="Celebrar">Celebrar</option>
+  <option value="Acolher">Acolher</option>
+   <option value="Carinho">Carinho</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 50,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Supremo de Morango')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!--Amendoin ao leite-->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="ovos/IMG_9621.jpg" class="active">
+    <img src="ovos/IMG_9633.jpg">
+    <img src="ovos/IMG_9646.jpg">
+    <img src="1.png">
+    <img src="2.png">
+    <img src="3.png">
+    <img src="4.png">
+    <img src="5.png">
+    <img src="6.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Amendoin ao Leite</h3>
+    <h2 style="color: #38180C;">150g</h2>
+
+    <p class="desc">
+      Generosas camadas de brigadeiro ao leite intercaladas 
+      com amendoim triturado crocante, resultando em um recheio 
+      intenso e cheio de textura.
+    </p>
+
+<!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+  <option value="Celebrar">Celebrar</option>
+  <option value="Acolher">Acolher</option>
+   <option value="Carinho">Carinho</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 50,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Ovo de Colher Amendoin ao Leite')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- Specullos -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="ovos/IMG_9547.jpg" class="active">
+    <img src="ovos/IMG_9557.jpg">
+    <img src="ovos/IMG_9610.jpg">
+    <img src="1.png">
+    <img src="2.png">
+    <img src="3.png">
+    <img src="4.png">
+    <img src="5.png">
+    <img src="6.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Speculoos</h3>
+    <h2 style="color: #38180C;">150g</h2>
+
+    <p class="desc">
+      Recheio de brigadeiro branco cremoso, com farofinha crocante de biscoito Lotus 
+      Speculoos® (biscoito belga amanteigado e caramelizado) finalizado com ganache de 
+      chocolate meio amargo com especiarias.
+    </p>
+
+  <!-- Embalagem -->
+    <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+  <select class="embalagem" onchange="updateEmbalagem(this)">
+    <option value="Celebrar">Celebrar</option>
+    <option value="Acolher">Acolher</option>
+    <option value="Carinho">Carinho</option>
+  </select>
+
+      <div class="mobile-row">
+        <h3 class="price">R$ 50,00</h3>
+
+        <div class="qtd">
+          <button onclick="changeQty(this,-1)">-</button>
+          <span>1</span>
+          <button onclick="changeQty(this,1)">+</button>
+        </div>
+      </div>
+
+      <button onclick="addItem(this, 'Ovo de colher Speculoos')">
+        ADICIONAR AO CARRINHO
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!-- ovos recheados -->
+<div class="produtos" id="ovos-recheados">
+<h2 style="font-size: 40px;">Ovos Recheados</h2>
+
+<!-- brigadeiro ao leite -->
+<div class="card">
+
+  <div class="carousel">
+
+    <img src="ovos/IMG_9772.jpg" class="active">
+    <img src="ovos/IMG_9757.jpg">
+    <img src="ovos/IMG_9873.jpg">
+    <img src="7.png">
+    <img src="8.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+
+  <div class="card-body">
+
+    <h3>Brigadeiro ao leite</h3>
+    <h2 style="color: #38180C;">400g</h2>
+
+    <p class="desc">
+      O clássico brigadeiro ao leite, cremoso e irresistível,
+      recheando um ovo de chocolate ao leite de alta qualidade.
+    </p>
+
+<!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+  <option value="Celebrar">Celebrar</option>
+  <option value="Acolher">Acolher</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 110,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Ovo Recheado Brigadeiro ao leite')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- Maracujá -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+
+    <img src="IMG_7589.png" class="active">
+    <img src="ovos/IMG_9855.jpg">
+    <img src="ovos/IMG_9796.jpg">
+    <img src="ovos/IMG_9873.jpg">
+    <img src="7.png">
+    <img src="8.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Ganache de Maracujá</h3>
+    <h2 style="color: #38180C;">400g</h2>
+
+    <p class="desc">
+      Recheio com duas texturas de maracujá: uma ganache cremosa combinada com geleia 
+      levemente azedinha, trazendo equilíbrio perfeito entre doce e ácido.
+    </p>
+
+     <!-- Embalagem -->
+       <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+    <select class="embalagem" onchange="updateEmbalagem(this)">
+      <option value="Celebrar">Celebrar</option>
+      <option value="Acolher">Acolher</option>
+    </select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 110,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Ovo Recheado ganache de maracujá')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- Floresta negra -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+
+    <img src="ovos/IMG_9736.jpg" class="active">
+    <img src="ovos/IMG_9740.jpg">
+    <img src="ovos/IMG_9858.jpg">
+    <img src="7.png">
+    <img src="8.png">
+
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Floresta Negra</h3>
+    <h2 style="color: #38180C;">400g</h2>
+
+    <p class="desc">
+      Inspirado na clássica sobremesa alemã, com brigadeiro ao leite cremoso
+      combinado com cerejas, criando um sabor sofisticado e marcante.
+    </p>
+
+<!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+  <option value="Celebrar">Celebrar</option>
+  <option value="Acolher">Acolher</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 110,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Ovo Recheado Floresta Negra')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- Brigadeiro ao Leite + Maracujá -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="ovos/IMG_9757.jpg" class="active">
+    <img src="ovos/IMG_9796.jpg">
+    <img src="ovos/IMG_9858.jpg">
+    <img src="7.png">
+    <img src="8.png">
+
+   <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Meio Brigadeiro ao Leite • Meio Maracujá</h3>
+    <h2 style="color: #38180C;">400g</h2>
+
+    <p class="desc">
+      Ovo de chocolate ao leite com recheio dividido em duas metades: 
+      o tradicional brigadeiro ao leite, cremoso e marcante, e uma 
+      suave ganache de maracujá que traz um contraste perfeito entre 
+      o doce e o toque cítrico da fruta.
+    </p>
+
+    <!-- Embalagem -->
+      <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+  <option value="Celebrar">Celebrar</option>
+  <option value="Acolher">Acolher</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 110,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Meio Brigadeiro ao leite e Meio Maracujá')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- Brigadeiro ao Leite + Floresta Negra -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="ovos/IMG_9842.jpg" class="active">
+    <img src="ovos/IMG_9736.jpg">
+    <img src="ovos/IMG_9858.jpg">
+    <img src="7.png">
+    <img src="8.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Meio Brigadeiro ao Leite • Floresta Negra</h3>
+    <h2 style="color: #38180C;">400g</h2>
+
+    <p class="desc">
+      Ovo de chocolate ao leite com recheio dividido em duas metades: 
+      Metade recheada com brigadeiro ao leite cremoso e metade com floresta negra, trazendo o contraste delicioso entre chocolate intenso e o toque especial das cerejas.
+    </p>
+
+<!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+  <option value="Celebrar">Celebrar</option>
+  <option value="Acolher">Acolher</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 110,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Meio Brigadeiro ao leite e Meio Floresta Negra')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- Maracujá + floresta negra -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="ovos/IMG_9873.jpg" class="active">
+    <img src="ovos/IMG_9796.jpg">
+    <img src="ovos/IMG_9736.jpg">
+    <img src="7.png">
+    <img src="8.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>Meio Ganache de Maracujá • Meio Floresta Negra</h3>
+    <h2 style="color: #38180C;">400g</h2>
+
+    <p class="desc">
+      Ovo de chocolate ao leite com recheio dividido em duas metades: 
+      Uma combinação sofisticada entre a ganache cremosa de maracujá, com seu leve toque cítrico, e o sabor marcante da floresta negra com cerejas.
+    </p>
+
+<!-- Embalagem -->
+  <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+<select class="embalagem" onchange="updateEmbalagem(this)">
+  <option value="Celebrar">Celebrar</option>
+  <option value="Acolher">Acolher</option>
+</select>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 110,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Meio ganache de maracujá meio floresta negra')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+</div>
+
+<!-- Lembrancinha -->
+<div class="produtos" id="kits">
+<h2 style="font-size: 40px;" >Lembrancinha</h2>
+
+<!-- kit 2un + embalagem -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="kit_celebrar.png" class="active">
+    <img src="kit_acolher2.png">
+    <img src="kit_acolher.png">
+    <img src="kit_celebrar2.png">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>kit com 2uni.</h3>
+    <h2 style="color: #38180C;">50g cada ovo</h2>
+
+    <p class="desc">
+      Monte sua lembrancinha como quiser! <br>
+      <b>Escolha até 2 recheios:</b>
+    </p>
+    <div class="contador-sabores">0/2 selecionados</div>
+
+<div class="opcoes" data-max="2">
+<label>
+<input type="checkbox" class="opc">Dois Amores
+</label>
+<label>
+<input type="checkbox" class="opc">Crocante com Brownie
+</label>
+<label>
+<input type="checkbox" class="opc">Cocô Queimado
+</label>
+
+<label>
+<input type="checkbox" class="opc">Supremo de Morango
+</label>
+
+<label>
+<input type="checkbox" class="opc">Amendoim ao Leite
+</label>
+<label>
+<input type="checkbox" class="opc"> Speculoos
+</label>
+</div>
+
+<!-- Embalagem -->
+ <h2 style="color: #38180C;">Escolha sua embalagem:</h2>
+
+<select class="embalagem" onchange="updateEmbalagem(this)">
+  <option value="Celebrar">Celebrar</option>
+  <option value="Acolher">Acolher</option>
+</select>
+
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 32,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Lembrancinha com 2 unidades')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- kit 3un -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="JL-11.jpg" class="active">
+    <img src="JL-15.jpg">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+
+  </div>
+  <div class="card-body">
+
+    <h3>kit Carinho 3uni.</h3>
+    <h2 style="color: #38180C;">50g cada ovo</h2>
+
+    <p class="desc">
+      Monte sua lembrancinha como quiser! <br>
+      <b>Escolha até 3 recheios:</b>
+    </p>
+    <div class="contador-sabores">0/3 selecionados</div>
+<div class="opcoes" data-max="3">
+<label>
+<input type="checkbox" class="opc">Dois Amores
+</label>
+<label>
+<input type="checkbox" class="opc">Crocante com Brownie
+</label>
+<label>
+<input type="checkbox" class="opc">Cocô Queimado
+</label>
+
+<label>
+<input type="checkbox" class="opc">Supremo de Morango
+</label>
+
+<label>
+<input type="checkbox" class="opc">Amendoim ao Leite
+</label>
+<label>
+<input type="checkbox" class="opc"> Speculoos
+</label>
+</div>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 46,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Lembrancinha com 3un')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+<!-- kit 6un -->
+<div class="card">
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <img src="JL-14.jpg" class="active">
+    <img src="JL-17.jpg">
+
+    <div class="carousel-controls">
+  <button class="arrow prev">‹</button>
+  <div class="dots"></div>
+  <button class="arrow next">›</button>
+</div>
+  
+  </div>
+  <div class="card-body">
+
+    <h3>kit Celebrar 6uni.</h3>
+    <h2 style="color: #38180C;">50g cada ovo</h2>
+
+    <p class="desc">
+      Monte sua lembrancinha como quiser! <br>
+      <b>Escolha até 6 recheios:</b>
+    </p>
+    <div class="contador-sabores">0/6 selecionados</div>
+
+<div class="opcoes" data-max="6">
+<label>
+<input type="checkbox" class="opc">Dois Amores
+</label>
+<label>
+<input type="checkbox" class="opc">Crocante com Brownie
+</label>
+<label>
+<input type="checkbox" class="opc">Cocô Queimado
+</label>
+
+<label>
+<input type="checkbox" class="opc">Supremo de Morango
+</label>
+
+<label>
+<input type="checkbox" class="opc">Amendoim ao Leite
+</label>
+<label>
+<input type="checkbox" class="opc"> Speculoos
+</label>
+</div>
+
+    <div class="mobile-row">
+      <h3 class="price">R$ 85,00</h3>
+
+      <div class="qtd">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span>1</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </div>
+
+    <button onclick="addItem(this, 'Lembrancinha com 6un')">
+      ADICIONAR AO CARRINHO
+    </button>
+
+  </div>
+</div>
+
+</div>
+
+<!--carrinho -->
+<div class="cart-btn" onclick="toggleCart()">
+  🛒
+  <span class="cart-count">0</span>
+</div>
+<div class="cart" id="cart">
+  <button class="close-cart" onclick="toggleCart()">✕</button>
+  <h2>Resumo do pedido</h2>
+  <div id="lista"></div>
+
+  <div class="resumo">
+    <p>Subtotal: <strong id="subtotal">R$ 0,00</strong></p>
+    <p>Total: <strong id="total">R$ 0,00</strong></p>
+  </div>
+
+  <h3>Finalizar Pedido</h3>
+  <input type="text" id="nome" placeholder="Nome completo">
+    <h4>Data de Retirada</h4>
+  <input type="date" id="data" min="2026-03-09" max="2026-04-04">
+  <h4>Pagamento</h4>
+  <select id="pagamento">
+    <option value="Pix">Pix</option>
+    <option value="Cartão">Cartão Debito </option>
+    <option value="Cartão">Cartão Crédito </option>
+    <option value="Dinheiro">Dinheiro</option>
+  </select>
+
+  <textarea id="obs" placeholder="Observações"></textarea>
+
+ <button onclick="enviarWhats()">
+Enviar pedido pelo WhatsApp
+</button>
+</div>
+
+<!--script-->
+<script>
+
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || []
+
+/* =========================
+   ATUALIZAR CARRINHO
+========================= */
+function atualizarCarrinho(){
+
+  const lista = document.getElementById('lista')
+  lista.innerHTML = ''
+
+  let total = 0
+  let totalItens = 0
+
+  carrinho.forEach((item,index)=>{
+
+    const totalItem = item.preco * item.qtd
+    total += totalItem
+    totalItens += item.qtd
+
+    lista.innerHTML += `
+      <div class="item-cart">
+
+        <img src="${item.img}">
+
+        <div class="info">
+          <strong>${item.nome}</strong>
+          <small>${item.tamanho || ""}</small>
+          <small>${item.embalagem || ""}</small>
+          <small>${item.sabores ? item.sabores.join(", ") : ""}</small>
+
+          <div class="qtd">
+            <button onclick="alterarQtd(${index},-1)">-</button>
+            <span>${item.qtd}</span>
+            <button onclick="alterarQtd(${index},1)">+</button>
+          </div>
+
+          <div class="valor">
+            R$ ${totalItem.toFixed(2).replace(".",",")}
+          </div>
+        </div>
+
+        <button onclick="removerItem(${index})">✕</button>
+
+      </div>
+    `
+  })
+
+  document.querySelector(".cart-count").innerText = totalItens
+
+  document.getElementById("subtotal").innerText =
+  "R$ " + total.toFixed(2).replace(".",",")
+
+  document.getElementById("total").innerText =
+  "R$ " + total.toFixed(2).replace(".",",")
+
+  localStorage.setItem("carrinho",JSON.stringify(carrinho))
+
+}
+
+const dataInput = document.getElementById("data");
+
+dataInput.addEventListener("change", function(){
+
+  const dataSelecionada = new Date(this.value)
+  const dia = dataSelecionada.getDate()
+
+  if(dia === 2){
+    alert("Não realizamos pedidos para retirada no dia 03.")
+    this.value = ""
+  }
+
+})
+
+/* =========================
+   ADICIONAR PRODUTO
+========================= */
+function addItem(btn,nome){
+
+  const card = btn.closest(".card")
+
+  const img = card.querySelector(".carousel img").src
+
+  const qtd = parseInt(card.querySelector(".qtd span").innerText)
+
+  let tamanho = ""
+  let preco = parseFloat(
+card.querySelector(".price")
+.innerText
+.replace("R$","")
+.replace(",",".")
+)
+
+  const selectSize = card.querySelector(".size")
+
+  if(selectSize){
+    tamanho = selectSize.options[selectSize.selectedIndex].text
+    preco = parseFloat(selectSize.value)
+  }
+
+  const embalagemSelect = card.querySelector(".embalagem")
+
+  let embalagem = ""
+
+  if(embalagemSelect){
+    embalagem = embalagemSelect.value
+  }
+
+  const sabores = []
+
+  card.querySelectorAll(".opc:checked").forEach(op=>{
+    sabores.push(op.parentElement.innerText)
+  })
+
+  carrinho.push({
+    nome,
+    tamanho,
+    embalagem,
+    sabores,
+    preco,
+    img,
+    qtd
+  })
+
+  atualizarCarrinho()
+
+}
+
+/* =========================
+   ALTERAR QUANTIDADE
+========================= */
+function alterarQtd(index,valor){
+
+  carrinho[index].qtd += valor
+
+  if(carrinho[index].qtd <= 0){
+    carrinho.splice(index,1)
+  }
+
+  atualizarCarrinho()
+
+}
+
+/* =========================
+   REMOVER ITEM
+========================= */
+function removerItem(index){
+
+const lista = document.querySelectorAll(".item-cart")
+
+const item = lista[index]
+
+item.classList.add("removing")
+
+setTimeout(()=>{
+
+carrinho.splice(index,1)
+
+atualizarCarrinho()
+
+},300)
+
+}
+
+/* =========================
+   ABRIR CARRINHO
+========================= */
+function toggleCart(){
+  document.getElementById("cart").classList.toggle("active")
+}
+
+/* =========================
+   ATUALIZAR PREÇO
+========================= */
+function updatePrice(select){
+
+  const card = select.closest(".card")
+
+  const price = card.querySelector(".price")
+
+  price.innerText =
+  "R$ " + parseFloat(select.value).toFixed(2).replace(".",",")
+
+}
+
+/* =========================
+   LIMITAR SABORES POR PRODUTO
+========================= */
+document.querySelectorAll(".opcoes").forEach(grupo=>{
+
+const max = parseInt(grupo.dataset.max)
+const contador = grupo.parentElement.querySelector(".contador-sabores")
+
+grupo.querySelectorAll(".opc").forEach(op=>{
+
+op.addEventListener("change",()=>{
+
+const marcados = grupo.querySelectorAll(".opc:checked")
+
+if(marcados.length > max){
+op.checked = false
+return
+}
+
+contador.innerText = marcados.length + "/" + max + " selecionados"
+
+})
+
+})
+
+})
+
+/* =========================
+   CONTADOR DO PRODUTO
+========================= */
+function changeQty(btn,change){
+
+  const span = btn.parentElement.querySelector("span")
+
+  let qtd = parseInt(span.innerText)
+
+  qtd += change
+
+  if(qtd < 1) qtd = 1
+
+  span.innerText = qtd
+
+}
+/* =========================
+   CARROSSEL PRODUTOS
+========================= */
+
+document.querySelectorAll(".carousel").forEach(carousel => {
+
+  const imagens = carousel.querySelectorAll("img")
+  const dotsContainer = carousel.querySelector(".dots")
+
+  let index = 0
+
+  /* criar bolinhas */
+  imagens.forEach((img,i)=>{
+
+    const dot = document.createElement("span")
+    dot.classList.add("dot")
+
+    if(i === 0){
+      img.classList.add("active")
+      dot.classList.add("active")
+    }
+
+    dot.addEventListener("click", ()=> {
+      mostrar(i)
+    })
+
+    dotsContainer.appendChild(dot)
+
+  })
+
+  const dots = dotsContainer.querySelectorAll(".dot")
+
+  function mostrar(i){
+
+    imagens[index].classList.remove("active")
+    dots[index].classList.remove("active")
+
+    index = i
+
+    imagens[index].classList.add("active")
+    dots[index].classList.add("active")
+
+  }
+
+  /* clique na imagem para trocar */
+  carousel.addEventListener("click", e => {
+
+    const largura = carousel.offsetWidth
+    const clique = e.offsetX
+
+    if(clique > largura/2){
+      let novo = (index + 1) % imagens.length
+      mostrar(novo)
+    }else{
+      let novo = (index - 1 + imagens.length) % imagens.length
+      mostrar(novo)
+    }
+
+  })
+
+  /* setas */
+
+  const next = carousel.querySelector(".next")
+  const prev = carousel.querySelector(".prev")
+
+  if(next){
+    next.onclick = (e)=>{
+      e.stopPropagation()
+      let novo = (index + 1) % imagens.length
+      mostrar(novo)
+    }
+  }
+
+  if(prev){
+    prev.onclick = (e)=>{
+      e.stopPropagation()
+      let novo = (index - 1 + imagens.length) % imagens.length
+      mostrar(novo)
+    }
+  }
+
+})
+
+
+/* =========================
+   SCROLL PARA SEÇÕES
+========================= */
+
+function scrollToSection(id){
+
+  const section = document.getElementById(id)
+
+  if(section){
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+  }
+
+}
+/* ========================= 
+   ENVIAR WHATSAPP
+========================= */
+
+function enviarWhats(){
+
+  if(carrinho.length === 0){
+    alert("Seu carrinho está vazio.")
+    return
+  }
+
+  const nome = document.getElementById("nome").value
+  const data = document.getElementById("data").value
+  const pagamento = document.getElementById("pagamento").value
+  const obs = document.getElementById("obs").value
+
+  if(!nome){
+    alert("Digite seu nome.")
+    return
+  }
+
+  // formatar data
+  let dataFormatada = data
+  if(data){
+    const partes = data.split("-")
+    dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`
+  }
+
+  let msg = "*PEDIDO - Conde's Doces* %0A"
+  msg += "━━━━━━━━━━━━━━━━━━ %0A%0A"
+
+  msg += "*ITENS DO PEDIDO* %0A%0A"
+
+  carrinho.forEach(item=>{
+
+    const subtotal = item.preco * item.qtd
+
+    msg += `${item.nome} %0A`
+
+    if(item.tamanho){
+      msg += `  Tamanho: ${item.tamanho} %0A`
+    }
+
+    if(item.sabores && item.sabores.length){
+      msg += `  Sabores: ${item.sabores.join(", ")} %0A`
+    }
+
+    if(item.embalagem){
+      msg += `  Embalagem: ${item.embalagem} %0A`
+    }
+
+    msg += `  Quantidade: ${item.qtd} %0A`
+    msg += `  Subtotal: R$ ${subtotal.toFixed(2)} %0A%0A`
+
+  })
+
+  const total = document.getElementById("total").innerText
+
+  msg += "━━━━━━━━━━━━━━━━━━ %0A"
+  msg += `${total} %0A`
+  msg += "━━━━━━━━━━━━━━━━━━ %0A%0A"
+
+  msg += "*DADOS DO CLIENTE* %0A"
+  msg += `Nome: ${nome} %0A`
+  msg += `Entrega: Retirada %0A`
+  msg += `Data: ${dataFormatada} %0A`
+  msg += `Pagamento: ${pagamento} %0A`
+
+  if(obs){
+    msg += `Observações: ${obs} %0A`
+  }
+
+  msg += "%0AObrigado por escolher a Conde's Doces. %0A"
+  msg += "Entraremos em contato para confirmar seu pedido."
+
+  const telefone = "553492950591"
+
+  const url = `https://wa.me/${telefone}?text=${msg}`
+
+  window.open(url, "_blank")
+}
+/* =========================
+  FECHAR POPUP E MARCAR COMO VISTO
+========================= */
+function fecharPopup(){
+  document.getElementById("popup").style.display = "none"
+  localStorage.setItem("popupVisto", "sim")
+}
+
+/* ========================
+    ATUALIZAR EMBALAGEM
+========================= */
+function updateEmbalagem(select){
+
+  const card = select.closest(".card")
+
+  const imagem = card.querySelector(".embalagem-img")
+
+  const tipo = select.value
+
+  if(tipo === "celebrar"){
+    imagem.src = "Embalagem/celebrar-trufado.jpg"
+  }
+
+  if(tipo === "acolher"){
+    imagem.src = "Embalagem/acolher-trufado.jpg"
+  }
+
+}
+
+/* =========================
+   CARREGAR CARRINHO SALVO
+========================= */
+
+atualizarCarrinho()
+
+</script>
+
+<!--footer-->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <img src="logocondes.png" alt="Conde's Doces">
+      <p>
+        Confeitaria artesanal especializada em ovos de Páscoa e doces finos.
+        Feitos com ingredientes selecionados e muito carinho.
+      </p>
+    </div>
+
+    <div class="footer-info">
+      <h4>Informações</h4>
+      <ul>
+        <li>Pedidos sob encomenda</li>
+        <li>Retirada em Monte Carmelo - MG</li>
+        <li>Reservas mediante 50% de entrada</li>
+      </ul>
+    </div>
+
+   <div class="contato">
+  <h4>Contato</h4>
+
+  <a href="https://wa.me/5534992950591" target="_blank">
+    WhatsApp: (34) 99295-0591
+  </a>
+
+  <a href="https://instagram.com/condes2025" target="_blank">
+    Instagram: @condes2025
+  </a>
+</div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Conde’s Doces — Todos os direitos reservados</p>
+  </div>
+
+</footer>
+
+</body>
+</html>
