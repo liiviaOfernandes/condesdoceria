@@ -299,6 +299,51 @@ body{
 }
 
 /* =====================================================
+   SCROLL PERSONALIZADO
+===================================================== */
+
+/* largura */
+::-webkit-scrollbar{
+  width:12px;
+}
+
+/* fundo */
+::-webkit-scrollbar-track{
+  background:#2C140C;
+}
+
+/* barra */
+::-webkit-scrollbar-thumb{
+
+  background:linear-gradient(
+    180deg,
+    #5a331c,
+    #BE513A
+  );
+
+  border-radius:999px;
+
+  border:2px solid #2C140C;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover{
+
+  background:linear-gradient(
+    180deg,
+    #5a331c,
+    #d3644b
+  );
+
+}
+
+/* Firefox */
+html{
+  scrollbar-width:thin;
+  scrollbar-color:#5a331c #2C140C;
+}
+
+/* =====================================================
    RESPONSIVO
 ===================================================== */
 @media(max-width:768px){
@@ -509,13 +554,15 @@ body{
       Instagram
     </a>
 
-    <a href="cardapio2026.html" target="_blank" class="gold">
+  <!--  <a href="index.html" target="_blank" class="gold">
       Entrar no site
-    </a>
+    </a>-->
 
   </div>
 
 </section>
+
+
 
 </body>
 </html>
